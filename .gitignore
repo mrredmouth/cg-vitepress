@@ -2,7 +2,7 @@
 # Node.js 相关
 # 所有 npm/yarn/pnpm 安装的依赖包，由 package-lock.json 或 yarn.lock 管理，无需提交
 node_modules/
-package-lock.json
+# package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
