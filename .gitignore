@@ -10,7 +10,7 @@ node_modules/
 docs/.vitepress/dist
 # VitePress 自动生成的缓存和临时文件
 docs/.vitepress/cache
-docs/.vitepress/temp
+# 自动构建的sidebar文件
 docs/.vitepress/src/config/auto_sidebar.ts
 
 

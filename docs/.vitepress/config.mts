@@ -7,10 +7,10 @@ import { genSidebar } from './src/utils/gen_utils.mts';
 export default defineConfig({
   title: "cg-vitepress",
   description: "A VitePress Site",
-  base: '/cgvitepress/', // 替换为你的仓库名，静态资源的引用路径会基于此路径。发布到github pages时需要
+  base: '/cg-vitepress/', // 替换为你的仓库名，静态资源的引用路径会基于此路径。发布到github pages时需要
   // 手动添加 favicon
   head: [
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/cgvitepress/ccg.ico' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/cg-vitepress/ccg.ico' }],
     // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/ccg.svg' }],
     // ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
     // ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
