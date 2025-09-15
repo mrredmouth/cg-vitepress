@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
-import autoSidebar from './src/config/auto_sidebar.ts'; // 自动识别 .ts 文件
 import { genSidebar } from './src/utils/gen_utils.mts';
+// import autoSidebar from './src/config/auto_sidebar.ts'; // 自动识别 .ts 文件
 
 
 // https://vitepress.dev/reference/site-config
@@ -25,23 +25,28 @@ export default defineConfig({
     siteTitle: 'themeConfig.siteTitle',// 站点标题
     // siteTitle: false,// 是否显示站点标题。false:只需要图标并且想要隐藏站点标题文本
     nav: [
-      { text: 'themeConfig.nav Home', link: '/' },
-      { text: 'themeConfig.nav Examples', link: '/markdown-examples' }
+      { text: 'themeConfig.nav导航栏 Home', link: '/' },
+      { text: 'themeConfig.nav Examples', link: '/markdown-examples' },
+      { text: 'themeConfig.nav Team', link: '/guide/team' }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
     sidebar: [
       {
-        text: 'themeConfig.sidebar',
+        text: 'themeConfig.sidebar侧边栏',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       },
+      // {
+      //   text: '自动生成侧边栏', // 自动生成，按照src中md文件的顺序
+      //   items: [ ...autoSidebar ] // 这样 items 就是可变的 SidebarItem[]
+      // },
       {
-        text: '自动生成侧边栏', // 自动生成，按照src中md文件的顺序
-        items: [ ...autoSidebar ] // 这样 items 就是可变的 SidebarItem[]
+        text: 'themeConfig.sidebar Guide',
+        items: [ ...genSidebar('docs/src/guide', 'guide') ] // 这样 items 就是可变的 SidebarItem[]
       },
       {
         text: '手动配置侧边栏bb',
@@ -54,14 +59,16 @@ export default defineConfig({
     ],
     outlineTitle: 'theme.outlineTitle 本页目录',
     outline: [2, 3], // 显示 h2 和 h3 标题
-    lastUpdatedText: '上次更新于',
     editLink: {
-      pattern: '编辑此页',
+      pattern: 'https://github.com/mrredmouth/cg-vitepress/edit/main/docs/src/:path',
       text: '在 GitHub 上编辑此页'
     },
+    lastUpdatedText: '上次更新于',
     footer: {
+      message: 'Released under the MIT License.',
       copyright: 'themeConfig.footer Copyright © 2025 chenchanggui'
     },
     
   },
+  lastUpdated: true,
 })

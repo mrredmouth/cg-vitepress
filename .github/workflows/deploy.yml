@@ -46,7 +46,6 @@ jobs:
       - name: Build with VitePress
         # 如果你使用 GitHub Pages，请添加此行以禁用 Jekyll
         run: |
-          npm run gen-sidebar
           npm run docs:build
           touch docs/.vitepress/dist/.nojekyll
       - name: Upload artifact
