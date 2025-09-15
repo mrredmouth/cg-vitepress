@@ -8,6 +8,7 @@ import { genSidebar } from './src/utils/gen_utils.mts';
 export default defineConfig({
   title: "cg-vitepress",
   description: "A VitePress Site",
+  base: '/cg-vitepress/', // 替换为你的仓库名，静态资源的引用路径会基于此路径。发布到github pages时需要
   // 手动添加 favicon
   head: [
     // SVG 图标（推荐，清晰）
