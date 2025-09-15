@@ -26,8 +26,14 @@ export default defineConfig({
     // siteTitle: false,// 是否显示站点标题。false:只需要图标并且想要隐藏站点标题文本
     nav: [
       { text: 'themeConfig.nav导航栏 Home', link: '/' },
-      { text: 'themeConfig.nav Examples', link: '/markdown-examples' },
-      { text: 'themeConfig.nav Team', link: '/guide/team' }
+      { text: 'Examples', link: '/markdown-examples' },
+      {
+        text: 'More',
+        items: [
+          { text: 'GitHub', link: 'https://github.com/vuejs/vitepress' },
+          { text: 'Team', link: '/guide/team' }
+        ]
+      }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
