@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import { resolve } from 'path'
 import autoSidebar from './src/config/auto_sidebar.ts'; // 自动识别 .ts 文件
 import { genSidebar } from './src/utils/gen_utils.mts';
 
@@ -8,26 +7,23 @@ import { genSidebar } from './src/utils/gen_utils.mts';
 export default defineConfig({
   title: "cg-vitepress",
   description: "A VitePress Site",
-  base: '/cg-vitepress/', // 替换为你的仓库名，静态资源的引用路径会基于此路径。发布到github pages时需要
+  base: '/cgvitepress/', // 替换为你的仓库名，静态资源的引用路径会基于此路径。发布到github pages时需要
   // 手动添加 favicon
   head: [
-    // SVG 图标（推荐，清晰）
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/ccg.ico' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/cgvitepress/ccg.ico' }],
     // ['link', { rel: 'icon', type: 'image/svg+xml', href: '/ccg.svg' }],
     // ['link', { rel: 'icon', type: 'image/png', href: '/logo.png' }],
     // ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
   ],
-  srcDir: './src',// 源码目录
+  srcDir: 'src',// 源码目录。相对于站点根目录 docs。默认src。
   srcExclude: ['**/README.md', '**/TODO.md'],
-  // outDir: 'dist',// 项目的构建输出位置，相对于项目根目录。默认值为 .vitepress/dist
-  // assetsDir: 'assets',// 指定静态资源（如图片、字体等）存放的目录，相对于 outDir 选项。默认值为 assets
-  cacheDir: './.vitepress/cache',
+  outDir: '.vitepress/dist',// 项目的构建输出位置，相对于站点根目录docs。默认值为 .vitepress/dist
+  assetsDir: 'assets',// 指定静态资源（如图片、字体等）存放的目录，相对于 outDir 选项。默认值为 assets
+  cacheDir: '.vitepress/cache',
   themeConfig: {
     logo: '/logo-ccg.svg' ,// 站点图标，在srcDir中的public目录下
     siteTitle: 'themeConfig.siteTitle',// 站点标题
     // siteTitle: false,// 是否显示站点标题。false:只需要图标并且想要隐藏站点标题文本
-    // 头部导航栏
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'themeConfig.nav Home', link: '/' },
       { text: 'themeConfig.nav Examples', link: '/markdown-examples' }

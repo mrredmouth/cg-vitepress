@@ -1,7 +1,4 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { generateSidebar } from '../scripts/gen_sidebar.mts';
-
 import createLogger from '../config/Logger.ts';
 
 /**

@@ -2,12 +2,12 @@
 
 ```md
 .                             # 项目根目录
-├─ docs
+├─ docs                       # VitePress 站点的根路径。为了跟其他项目区分开来
 │  ├─ .vitepress              # 配置目录。是 VitePress 配置文件、开发服务器缓存、构建输出和可选主题自定义代码的位置。
 │  │  ├─ cache                # 缓存目录。默认情况下，VitePress 将其开发服务器缓存存储在 .vitepress/cache 中，并将生产构建输出存储在 .vitepress/dist 中。
 │  │  └─ config.js            # 配置文件。自定义 VitePress 站点的各个方面
-│  ├─ src                     # 源目录。在config.js中配置
-│     ├─ api-examples.md      # .vitepress 目录之外的 Markdown 文件被视为源文件。
+│  ├─ src                     # 源目录。.vitepress 目录之外的 Markdown 文件被视为源文件。
+│     ├─ api-examples.md      
 │     ├─ markdown-examples.md
 │     └─ index.md
 └─ package.json
