@@ -7,8 +7,8 @@ yarn.lock
 pnpm-lock.yaml
 
 
-# Vue 项目构建后生成的静态文件（通过 npm run build 生成）
-.vitepress/dist
+# Vue 项目构建后生成的静态文件（通过 npm run docs:build 生成）
+docs/.vitepress/dist
 
 # 日志文件
 logs
