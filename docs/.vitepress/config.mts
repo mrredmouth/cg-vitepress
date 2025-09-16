@@ -55,6 +55,10 @@ export default defineConfig({
         items: [ ...genSidebar('docs/src/guide', 'guide') ] // 这样 items 就是可变的 SidebarItem[]
       },
       {
+        text: 'NYFB',
+        items: [ ...genSidebar('docs/src/nyfb', 'nyfb')]
+      },
+      {
         text: '手动配置侧边栏bb',
         items: [ ...genSidebar('docs/src/bb', 'bb')]
       },

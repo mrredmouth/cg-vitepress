@@ -13,6 +13,12 @@
 └─ package.json
 ```
 
+### 根目录和源目录
++ 项目根目录是 VitePress 将尝试寻找 .vitepress 特殊目录的地方
++ 源目录是 Markdown 源文件所在的位置。默认情况下，它与项目根目录相同。但是，可以通过 srcDir 配置选项对其进行配置。
+> srcDir 选项是相对于项目根目录解析的。例如，对于 srcDir: 'src'，文件结构将如下所示：
+
+
 
 + 每个 .md 文件将在相同的路径被编译成为 .html 文件。例如，index.md 将会被编译成 index.html，可以在生成的 VitePress 站点的根路径 / 进行访问。
 
