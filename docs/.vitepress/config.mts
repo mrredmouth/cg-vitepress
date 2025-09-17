@@ -30,8 +30,8 @@ export default defineConfig({
       {
         text: 'More',
         items: [
+          { text: 'Team', link: '/more/team' },
           { text: 'GitHub', link: 'https://github.com/vuejs/vitepress' },
-          { text: 'Team', link: '/guide/team' }
         ]
       }
     ],
@@ -54,8 +54,8 @@ export default defineConfig({
         items: [ ...genSidebar('docs/src/guide', 'guide') ] // 这样 items 就是可变的 SidebarItem[]
       },
       {
-        text: 'NYFB',
-        items: [ ...genSidebar('docs/src/nyfb', 'nyfb')]
+        text: 'Work',
+        items: [ ...genSidebar('docs/src/work', 'work')]
       },
       {
         text: '手动配置侧边栏bb',
