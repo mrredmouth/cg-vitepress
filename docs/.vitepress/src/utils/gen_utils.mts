@@ -16,8 +16,7 @@ function genSidebar(dir: string, basePath: string = '', prefix: string = ''): Ar
   const sidebar: Array<{ text: string; link?: string; items?: any[] }> = generateSidebar(dir, basePath, prefix);
 
   logger.info(`✅ Generate sidebar successfully for ${dir}`);
-  // const sidebarConfigStr = `${JSON.stringify(sidebar, null, 2)}`
-  // logger.info(`📄 Output: ${sidebarConfigStr}`);
+  // logger.info(`📄 Output: ${JSON.stringify(sidebar, null, 2)}`);
   return sidebar;
 }
 

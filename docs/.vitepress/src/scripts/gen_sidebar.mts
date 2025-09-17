@@ -31,14 +31,23 @@ function generateSidebar(dir: string, basePath: string = '', prefix: string = ''
     const relativePath = path.join(basePath, entry).replace(/\\/g, '/');
 
     if (stat.isDirectory()) {
+      const dirEntries = fs.readdirSync(fullPath);
+      // console.log('Directory entries:', dirEntries);
+      let linker: { text: string; link?: string; items?: any[] }  = { text: '' };
+      // 目录：作为一个侧边栏组
+      linker.text = capitalizeFirstLetter(entry);
+      if (dirEntries.includes('index.md')) {
+        // 如果目录下有 index.md 文件，则将其作为目录的链接
+        linker.link = `${prefix}/${relativePath}/`;
+      }
+      
       // 目录：递归处理
       const children = generateSidebar(fullPath, relativePath);
+      
       if (children.length > 0) {
-        sidebar.push({
-          text: capitalizeFirstLetter(entry),
-          items: children,
-        });
+        linker.items = children;
       }
+      sidebar.push(linker);
     } else if (entry.endsWith('.md') && entry !== 'index.md' && entry !== '404.md') {
       // Markdown 文件
       const label = path.basename(entry, '.md');

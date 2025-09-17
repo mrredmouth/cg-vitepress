@@ -26,7 +26,7 @@ export default defineConfig({
     // siteTitle: false,// 是否显示站点标题。false:只需要图标并且想要隐藏站点标题文本
     nav: [
       { text: 'themeConfig.nav导航栏 Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
+      { text: 'Guide', link: '/guide/markdown' },
       {
         text: 'More',
         items: [
@@ -42,7 +42,6 @@ export default defineConfig({
       {
         text: 'themeConfig.sidebar侧边栏',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       },
@@ -51,7 +50,7 @@ export default defineConfig({
       //   items: [ ...autoSidebar ] // 这样 items 就是可变的 SidebarItem[]
       // },
       {
-        text: 'themeConfig.sidebar Guide',
+        text: 'Guide',
         items: [ ...genSidebar('docs/src/guide', 'guide') ] // 这样 items 就是可变的 SidebarItem[]
       },
       {
@@ -78,7 +77,15 @@ export default defineConfig({
       message: 'Released under the MIT License.',
       copyright: 'themeConfig.footer Copyright © 2025 chenchanggui'
     },
-    
+    search: {
+      provider: 'local'
+    }
   },
   lastUpdated: true,
+  markdown: {
+    image: {
+      // 默认禁用；设置为 true 可为所有图片启用懒加载。
+      lazyLoading: true
+    }
+  }
 })
