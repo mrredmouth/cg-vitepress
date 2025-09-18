@@ -91,9 +91,9 @@
 | <div style="width:300px">修改宽度</div> | 降价 | 说明 | 
 | :-----: | --- | --- | 
 | / | [Home] | `高亮显示` | 
-| /testx/ | [testx] | README文件位于testx子目录中。 | 
-| /testx/filea.md | [testx - filea] | testx子目录中的filea.md文件；注意.md扩展名。 | 
-| /testx/fileb.html | [testx - fileb] | testx 子目录中的 fileb.md 文件；注意， .html 扩展名仍然指向 .md 文件 |
+| /a/ | [a] | README文件位于a子目录中。 | 
+| /a/a.1.md | [a - a.1] | a 子目录中的a.1.md文件；注意.md扩展名。 | 
+| /a/a.1.html | [a - a.1] | a 子目录中的 a.1.md 文件；注意， .html 扩展名仍然指向 .md 文件 |
 
 3. html标签形式
 <table>
@@ -276,36 +276,35 @@ export default {
 
 ### 图片
 #### 内联方式1
-<!-- ![图片1](/samples/Crystal.jpg '描述：内联图片') -->
+![图片1](/images/Crystal.jpg '描述：内联图片')
 #### 内联方式2
-<!-- <img :src="$withBase('/samples/Crystal.jpg')" alt="内联图片img" /> -->
+<img :src="$withBase('/images/Crystal.jpg')" alt="内联图片img" />
 
 #### 内联方式3
-<!-- <img :src="('/samples/Crystal.jpg')" alt="内联图片img"> -->
+<img :src="('/images/Crystal.jpg')" alt="内联图片img">
 
 
 #### 引用方式
 ![图片2][01]
 
-<!-- [01]: /samples/Crystal.jpg "描述：引用图片" -->
+[01]: /images/Crystal.jpg "描述：引用图片"
 
 
 ### 导航
 1. 绝对路径  
 [跳转到首页](/)  
 [跳转到 guide](/guide/)  
-[跳转到 vms](/markdown/vms/) `[跳转到 vms](/markdown/vms/)`  
+[跳转到 markdown](/guide/markdown/) `[跳转到 markdown](/guide/markdown/)`  
 
 2. 相对路径  
 [跳转到 emojis](emojis.md) `[跳转到 emojis](emojis.md)`  
 
 3. 跳转到标题  
 [跳转到指定标题 代码块](./#代码块) `[跳转到指定标题 代码块](./#代码块)`  
-[字体颜色 绝对路径](/markdown/colors.html#字体颜色)   
-[Symbols 相对路径](./emojis.md#Symbols "title") 
+[字体颜色 绝对路径](/guide/markdown/colors.md#字体)   
 
 4. 跳转到本地文件  
-[my link](D:/logs/myfale.log)
+[my link](D:\\projects\\ccgProjs\\vue3\\cg-vitepress\\logs\\app.log)
 
 ## 转义字符
 显示结果	| 描述	|输入	| 实体编号
