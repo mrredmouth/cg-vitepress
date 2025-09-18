@@ -49,22 +49,9 @@ export default defineConfig({
       //   text: '自动生成侧边栏', // 自动生成，按照src中md文件的顺序
       //   items: [ ...autoSidebar ] // 这样 items 就是可变的 SidebarItem[]
       // },
-      {
-        text: 'Guide',
-        items: [ ...genSidebar('docs/src/guide', 'guide') ] // 这样 items 就是可变的 SidebarItem[]
-      },
-      {
-        text: 'Work',
-        items: [ ...genSidebar('docs/src/work', 'work')]
-      },
-      {
-        text: '手动配置侧边栏bb',
-        items: [ ...genSidebar('docs/src/bb', 'bb')]
-      },
-      {
-        text: '手动配置侧边栏aa',
-        items: [ ...genSidebar('docs/src/aa', 'aa')]
-      }
+      genSidebar('docs/src/a', 'a', '手动配置侧边栏a'),
+      genSidebar('docs/src/guide', 'guide'),
+      genSidebar('docs/src/work', 'work'),
     ],
     outlineTitle: 'theme.outlineTitle 本页目录',
     outline: [2, 3], // 显示 h2 和 h3 标题

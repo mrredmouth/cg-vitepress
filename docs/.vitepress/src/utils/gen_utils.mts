@@ -1,4 +1,4 @@
-import { generateSidebar } from '../scripts/gen_sidebar.mts';
+import { generateSidebarItems,generateSidebar } from '../scripts/gen_sidebar.mts';
 import createLogger from '../config/Logger.ts';
 
 /**
@@ -12,13 +12,21 @@ import createLogger from '../config/Logger.ts';
 const logger = createLogger('gen-sidebar');
 
 
-function genSidebar(dir: string, basePath: string = '', prefix: string = ''): Array<{ text: string; link?: string; items?: any[] }> {
-  const sidebar: Array<{ text: string; link?: string; items?: any[] }> = generateSidebar(dir, basePath, prefix);
+function genSidebarItems(dir: string, basePath: string = ''): Array<{ text: string; link?: string; items?: any[] }> {
+  const sidebar: Array<{ text: string; link?: string; items?: any[] }> = generateSidebarItems(dir, basePath);
+
+  logger.info(`✅ Generate sidebarItems successfully for ${dir}`);
+  // logger.info(`📄 Output: ${JSON.stringify(sidebar, null, 2)}`);
+  return sidebar;
+}
+
+function genSidebar(dir: string, basePath: string = '', renameTtext: string = ''): { text: string; link?: string; items?: any[] } {
+  const sidebar: { text: string; link?: string; items?: any[] } = generateSidebar(dir, basePath);
+  sidebar.text = renameTtext || sidebar.text;
 
   logger.info(`✅ Generate sidebar successfully for ${dir}`);
   // logger.info(`📄 Output: ${JSON.stringify(sidebar, null, 2)}`);
   return sidebar;
 }
 
-
-export { genSidebar }
+export { genSidebarItems, genSidebar }
