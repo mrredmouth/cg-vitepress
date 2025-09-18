@@ -31,7 +31,7 @@ export default defineConfig({
         text: 'More',
         items: [
           { text: 'Team', link: '/more/team' },
-          { text: 'GitHub', link: 'https://github.com/vuejs/vitepress' },
+          { text: 'GitHub', link: 'https://github.com/mrredmouth/cg-vitepress.git' },
         ]
       }
     ],
