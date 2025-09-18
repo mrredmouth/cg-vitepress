@@ -51,7 +51,7 @@ export default defineConfig({
       // },
       genSidebar('docs/src/a', 'a', '手动配置侧边栏a'),
       genSidebar('docs/src/guide', 'guide'),
-      genSidebar('docs/src/work', 'work'),
+      genSidebar('docs/src/more', 'more'),
     ],
     outlineTitle: 'theme.outlineTitle 本页目录',
     outline: [2, 3], // 显示 h2 和 h3 标题

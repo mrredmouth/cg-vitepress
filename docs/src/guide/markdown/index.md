@@ -275,43 +275,46 @@ export default {
 
 
 ### 图片
-#### 内联方式1
-![图片1](/images/Crystal.jpg '描述：内联图片')
-#### 内联方式2
-<img :src="$withBase('/images/Crystal.jpg')" alt="内联图片img" />
 
-#### 内联方式3
-<img :src="('/images/Crystal.jpg')" alt="内联图片img">
+**input**
+````md
+![An image](/images/Crystal.jpg)
+````
 
-
-#### 引用方式
-![图片2][01]
-
-[01]: /images/Crystal.jpg "描述：引用图片"
+![An image](/images/Crystal.jpg)
 
 
 ### 导航
-1. 绝对路径  
-[跳转到首页](/)  
-[跳转到 guide](/guide/)  
-[跳转到 markdown](/guide/markdown/) `[跳转到 markdown](/guide/markdown/)`  
+1. 相对路径
+ 
+**input**
+````md
++ [colors](./colors)
++ [emojis](./emojis)
++ [emojis#symbols](./emojis#symbols)
+````
 
-2. 相对路径  
-[跳转到 emojis](emojis.md) `[跳转到 emojis](emojis.md)`  
+**output**
++ [colors](./colors)
++ [emojis](./emojis)
++ [emojis#symbols](./emojis#symbols)
 
-3. 跳转到标题  
-[跳转到指定标题 代码块](./#代码块) `[跳转到指定标题 代码块](./#代码块)`  
-[字体颜色 绝对路径](/guide/markdown/colors.md#字体)   
+2. 绝对路径
 
-4. 跳转到本地文件  
-[my link](D:\\projects\\ccgProjs\\vue3\\cg-vitepress\\logs\\app.log)
+**input**
+````md
++ [跳转到 guide](/guide/)
+````
+
+**output**
++ [跳转到 guide](/guide/)
 
 ## 转义字符
 显示结果	| 描述	|输入	| 实体编号
 -- | --- | -- | --
 | |空格	|`&nbsp;`	|`&#160;`
 <	|小于号|	`&lt;`|	`&#60;`
->	|大于号|	`&gt;`|	`&#62;`
+\>	|大于号|	`&gt;`|	`&#62;`
 &	|和号	|`&amp;`|	`&#38;`
 "	|引号	|`&quot;`|	`&#34;`
 '	|撇号|	`&apos;`(IE不支持) |`&#39;`
