@@ -26,7 +26,7 @@ export default defineConfig({
     // siteTitle: false,// 是否显示站点标题。false:只需要图标并且想要隐藏站点标题文本
     nav: [
       { text: 'themeConfig.nav导航栏 Home', link: '/' },
-      { text: 'Guide', link: '/guide/markdown' },
+      { text: 'Guide', link: '/guide' },
       {
         text: 'More',
         items: [
@@ -42,16 +42,16 @@ export default defineConfig({
       {
         text: 'themeConfig.sidebar侧边栏',
         items: [
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Runtime API Examples', link: '/api-examples' },
         ]
       },
       // {
       //   text: '自动生成侧边栏', // 自动生成，按照src中md文件的顺序
       //   items: [ ...autoSidebar ] // 这样 items 就是可变的 SidebarItem[]
       // },
-      genSidebar('docs/src/a', 'a', '手动配置侧边栏a'),
+      genSidebar('docs/src/a', 'a', '自定义a'),
       genSidebar('docs/src/guide', 'guide'),
-      genSidebar('docs/src/more', 'more'),
     ],
     outlineTitle: 'theme.outlineTitle 本页目录',
     outline: [2, 3], // 显示 h2 和 h3 标题
