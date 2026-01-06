@@ -29,6 +29,11 @@ function generateSidebarItems(dir: string, basePath: string = ''): Array<{ text:
     const relativePath = path.join(basePath, entry).replace(/\\/g, '/');
 
     if (stat.isDirectory()) {
+      // 跳过resources目录
+      if (entry === 'resources') {
+        return;
+      }
+
       const dirEntries = fs.readdirSync(fullPath);
 
       // console.log(fullPath, 'Directory entries:', dirEntries);
@@ -87,6 +92,11 @@ function generateSidebar(dir: string, basePath: string = ''): { text: string; li
     const relativePath = path.join(basePath, entry).replace(/\\/g, '/');
 
     if (stat.isDirectory()) {
+      // 跳过resources目录
+      if (entry === 'resources') {
+        return;
+      }
+
       const dirEntries = fs.readdirSync(fullPath);
 
       // console.log(12, fullPath, 'Directory entries:', dirEntries);
